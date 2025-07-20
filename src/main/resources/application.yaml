@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: XmlTagReaderSpringBoot
+iso:
+  extract:
+    commonFields:
+      TxId: TxId
+      EndToEndId: EndToEndId
+      OrgnlTxId: originalTxId
+      OrgnlEndToEndId: originalEndToEndId
+      AccptncDtTm: acceptanceDateTime
+      IntrBkSttlmAmt: amount
+    pathFields:
+      IBAN:
+        - path: "DbtrAcct>Id>IBAN"
+          key: debtorIBAN
+        - path: "CdtrAcct>Id>IBAN"
+          key: creditorIBAN
+      BICFI:
+        - path: "DbtrAgt>FinInstnId>BICFI"
+          key: debtorAgentBIC
+        - path: "CdtrAgt>FinInstnId>BICFI"
+          key: creditorAgentBIC
+        - path: "InstgAgt>FinInstnId>BICFI"
+          key: initiatingAgentBIC
