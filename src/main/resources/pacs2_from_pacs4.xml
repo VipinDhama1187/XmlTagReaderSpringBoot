@@ -21,7 +21,7 @@
             <OrgnlInstrId>InstrIdPKAz240319z103103</OrgnlInstrId>
             <OrgnlEndToEndId>${OrgnlEndToEndId}</OrgnlEndToEndId>
             <OrgnlTxId>${OrgnlTxId}</OrgnlTxId>
-            <AccptncDtTm>${acceptanceDateTime}</AccptncDtTm>
+            <AccptncDtTm>${AccptncDtTm}</AccptncDtTm>
             <OrgnlTxRef>
                 <IntrBkSttlmAmt Ccy="EUR">${amount}</IntrBkSttlmAmt>
                 <IntrBkSttlmDt>2025-07-16</IntrBkSttlmDt>

@@ -49,10 +49,7 @@ public class XmlPlaceholderExtractor {
             int event = reader.next();
             if (event == XMLStreamConstants.START_ELEMENT) {
                 String tag = reader.getLocalName();
-                System.out.println("START_ELEMENT: " + tag);
-
                 path.push(tag);
-
                 FieldProcessor processor = processorMap.get(tag);
                 if (processor != null) {
                     processor.process(reader, values, path);
@@ -63,6 +60,13 @@ public class XmlPlaceholderExtractor {
         }
 
         reader.close();
+        ensureDefaultValues(values);
         return values;
+    }
+
+    private void ensureDefaultValues(Map<String, String> values) {
+        config.defaultValues().forEach(
+                (key, defaultValue) -> values.computeIfAbsent(key, k -> defaultValue)
+        );
     }
 }

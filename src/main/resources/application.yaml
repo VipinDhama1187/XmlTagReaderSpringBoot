@@ -6,9 +6,9 @@ iso:
     commonFields:
       TxId: TxId
       EndToEndId: EndToEndId
-      OrgnlTxId: originalTxId
-      OrgnlEndToEndId: originalEndToEndId
-      AccptncDtTm: acceptanceDateTime
+      OrgnlTxId: OrgnlTxId
+      OrgnlEndToEndId: OrgnlEndToEndId
+      AccptncDtTm: AccptncDtTm
       IntrBkSttlmAmt: amount
     pathFields:
       IBAN:
@@ -23,3 +23,6 @@ iso:
           key: creditorAgentBIC
         - path: "InstgAgt>FinInstnId>BICFI"
           key: initiatingAgentBIC
+    defaultValues:
+      AccptncDtTm: "2025-01-01T10:00:00Z"
+      amount: 0.0
